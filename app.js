@@ -523,8 +523,8 @@ class ProductivityHub {
         const weatherContent = document.getElementById('weatherContent');
         if (weatherContent) {
             weatherContent.innerHTML = `
-                <div class="weather__location">San Francisco, CA</div>
-                <div class="weather__temp">22°C</div>
+                <div class="weather__location">Mumbai, IN</div>
+                <div class="weather__temp">28°C</div>
                 <div class="weather__condition">⛅ Partly Cloudy</div>
                 <div class="weather__details">
                     <div>Humidity: 65%</div>
