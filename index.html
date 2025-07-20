@@ -1,1 +1,214 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductivityHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__left">
+                    <h1 class="header__title">ProductivityHub</h1>
+                    <div class="header__time">
+                        <div id="currentTime" class="header__clock">--:--</div>
+                        <div id="currentDate" class="header__date">Loading...</div>
+                        <div id="greeting" class="header__greeting">Welcome!</div>
+                    </div>
+                </div>
+                <div class="header__right">
+                    <button id="themeToggle" class="btn btn--outline theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-toggle__icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <div class="container">
+            <div class="dashboard__grid">
+                <!-- Task Management Widget -->
+                <div class="widget widget--large">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="widget__title">Tasks</h2>
+                            <div class="task__controls">
+                                <select id="taskFilter" class="form-control task__filter">
+                                    <option value="all">All Tasks</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <form id="taskForm" class="task__form">
+                                <input type="text" id="taskTitle" class="form-control" placeholder="Add a new task..." required>
+                                <div class="task__form-row">
+                                    <select id="taskPriority" class="form-control">
+                                        <option value="low">Low Priority</option>
+                                        <option value="medium" selected>Medium Priority</option>
+                                        <option value="high">High Priority</option>
+                                    </select>
+                                    <select id="taskCategory" class="form-control">
+                                        <option value="work">Work</option>
+                                        <option value="personal">Personal</option>
+                                        <option value="health">Health</option>
+                                        <option value="learning">Learning</option>
+                                    </select>
+                                    <input type="date" id="taskDueDate" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width">Add Task</button>
+                            </form>
+                            
+                            <div class="task__stats">
+                                <div class="stat">
+                                    <span class="stat__value" id="totalTasks">0</span>
+                                    <span class="stat__label">Total</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat__value" id="completedTasks">0</span>
+                                    <span class="stat__label">Completed</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat__value" id="completionRate">0%</span>
+                                    <span class="stat__label">Completion</span>
+                                </div>
+                            </div>
+                            
+                            <div id="taskList" class="task__list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Widget -->
+                <div class="widget">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="widget__title">Weather</h2>
+                        </div>
+                        <div class="card__body">
+                            <div id="weatherContent" class="weather">
+                                <div class="weather__loading">Loading weather...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Quote Widget -->
+                <div class="widget">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="widget__title">Daily Quote</h2>
+                            <button id="refreshQuote" class="btn btn--sm btn--outline">Refresh</button>
+                        </div>
+                        <div class="card__body">
+                            <div id="quoteContent" class="quote">
+                                <div class="quote__loading">Loading quote...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Notes Widget -->
+                <div class="widget">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="widget__title">Quick Notes</h2>
+                        </div>
+                        <div class="card__body">
+                            <form id="noteForm" class="note__form">
+                                <textarea id="noteContent" class="form-control" rows="3" placeholder="Add a quick note..."></textarea>
+                                <button type="submit" class="btn btn--primary btn--sm">Add Note</button>
+                            </form>
+                            
+                            <div class="note__search">
+                                <input type="text" id="noteSearch" class="form-control" placeholder="Search notes...">
+                            </div>
+                            
+                            <div id="noteList" class="note__list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Focus Timer Widget -->
+                <div class="widget">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="widget__title">Focus Timer</h2>
+                        </div>
+                        <div class="card__body">
+                            <div class="timer">
+                                <div class="timer__display">
+                                    <div id="timerTime" class="timer__time">25:00</div>
+                                    <div id="timerStatus" class="timer__status">Ready to focus</div>
+                                </div>
+                                
+                                <div class="timer__progress">
+                                    <div id="timerProgress" class="timer__progress-bar"></div>
+                                </div>
+                                
+                                <div class="timer__controls">
+                                    <button id="timerStart" class="btn btn--primary">Start</button>
+                                    <button id="timerPause" class="btn btn--outline" disabled>Pause</button>
+                                    <button id="timerReset" class="btn btn--outline">Reset</button>
+                                </div>
+                                
+                                <div class="timer__sessions">
+                                    <span class="timer__sessions-label">Sessions completed:</span>
+                                    <span id="timerSessions" class="timer__sessions-count">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Analytics Widget -->
+                <div class="widget widget--wide">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="widget__title">Progress Analytics</h2>
+                        </div>
+                        <div class="card__body">
+                            <div class="analytics">
+                                <div class="analytics__daily">
+                                    <h3>Today's Progress</h3>
+                                    <div class="progress-bar">
+                                        <div id="dailyProgress" class="progress-bar__fill" style="width: 0%"></div>
+                                    </div>
+                                    <div class="progress-stats">
+                                        <span id="dailyTasksCompleted">0</span> of <span id="dailyTasksTotal">0</span> tasks completed
+                                    </div>
+                                </div>
+                                
+                                <div class="analytics__weekly">
+                                    <h3>This Week</h3>
+                                    <div class="week-chart" id="weekChart">
+                                        <!-- Weekly chart will be generated by JavaScript -->
+                                    </div>
+                                </div>
+                                
+                                <div class="analytics__achievements">
+                                    <h3>Achievements</h3>
+                                    <div class="achievements" id="achievements">
+                                        <!-- Achievements will be generated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
