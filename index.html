@@ -3,211 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProductivityHub</title>
+    <meta name="description" content="Tapeshkumar Thakur - AI & Data Science Engineering Student | Portfolio">
+    <meta name="keywords" content="Tapeshkumar Thakur, AI, Data Science, Machine Learning, Portfolio, Web Developer">
+    <meta name="author" content="Tapeshkumar Thakur">
+    <title>Tapeshkumar Thakur | AI & Data Science Student</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="container">
-            <div class="header__content">
-                <div class="header__left">
-                    <h1 class="header__title">ProductivityHub</h1>
-                    <div class="header__time">
-                        <div id="currentTime" class="header__clock">--:--</div>
-                        <div id="currentDate" class="header__date">Loading...</div>
-                        <div id="greeting" class="header__greeting">Welcome!</div>
-                    </div>
-                </div>
-                <div class="header__right">
-                    <button id="themeToggle" class="btn btn--outline theme-toggle" aria-label="Toggle theme">
-                        <span class="theme-toggle__icon">🌙</span>
-                    </button>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Tapesh Thakur</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Dashboard -->
-    <main class="dashboard">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="dashboard__grid">
-                <!-- Task Management Widget -->
-                <div class="widget widget--large">
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 class="widget__title">Tasks</h2>
-                            <div class="task__controls">
-                                <select id="taskFilter" class="form-control task__filter">
-                                    <option value="all">All Tasks</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="card__body">
-                            <form id="taskForm" class="task__form">
-                                <input type="text" id="taskTitle" class="form-control" placeholder="Add a new task..." required>
-                                <div class="task__form-row">
-                                    <select id="taskPriority" class="form-control">
-                                        <option value="low">Low Priority</option>
-                                        <option value="medium" selected>Medium Priority</option>
-                                        <option value="high">High Priority</option>
-                                    </select>
-                                    <select id="taskCategory" class="form-control">
-                                        <option value="work">Work</option>
-                                        <option value="personal">Personal</option>
-                                        <option value="health">Health</option>
-                                        <option value="learning">Learning</option>
-                                    </select>
-                                    <input type="date" id="taskDueDate" class="form-control">
-                                </div>
-                                <button type="submit" class="btn btn--primary btn--full-width">Add Task</button>
-                            </form>
-                            
-                            <div class="task__stats">
-                                <div class="stat">
-                                    <span class="stat__value" id="totalTasks">0</span>
-                                    <span class="stat__label">Total</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat__value" id="completedTasks">0</span>
-                                    <span class="stat__label">Completed</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat__value" id="completionRate">0%</span>
-                                    <span class="stat__label">Completion</span>
-                                </div>
-                            </div>
-                            
-                            <div id="taskList" class="task__list"></div>
-                        </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Tapeshkumar Thakur</h1>
+                    <p class="hero-tagline">AI & Data Science Engineering Student | Aspiring Data Scientist | Internship Seeker</p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/tapeshthakur" target="_blank" class="btn btn--primary">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tapeshthakur" target="_blank" class="btn btn--primary">
+                            <span>LinkedIn</span>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Weather Widget -->
-                <div class="widget">
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 class="widget__title">Weather</h2>
-                        </div>
-                        <div class="card__body">
-                            <div id="weatherContent" class="weather">
-                                <div class="weather__loading">Loading weather...</div>
-                            </div>
-                        </div>
+                <div class="hero-avatar">
+                    <div class="avatar-placeholder">
+                        <span>TT</span>
                     </div>
                 </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Daily Quote Widget -->
-                <div class="widget">
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 class="widget__title">Daily Quote</h2>
-                            <button id="refreshQuote" class="btn btn--sm btn--outline">Refresh</button>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Third-year Artificial Intelligence & Data Science Engineering student passionate about machine learning, data visualization, and web development. Currently maintaining a strong academic record with CGPA 7.81/10 while actively seeking internship opportunities to apply theoretical knowledge in real-world scenarios.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">8.36/10</span>
+                            <span class="stat-label">Current SGPA</span>
                         </div>
-                        <div class="card__body">
-                            <div id="quoteContent" class="quote">
-                                <div class="quote__loading">Loading quote...</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Notes Widget -->
-                <div class="widget">
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 class="widget__title">Quick Notes</h2>
-                        </div>
-                        <div class="card__body">
-                            <form id="noteForm" class="note__form">
-                                <textarea id="noteContent" class="form-control" rows="3" placeholder="Add a quick note..."></textarea>
-                                <button type="submit" class="btn btn--primary btn--sm">Add Note</button>
-                            </form>
-                            
-                            <div class="note__search">
-                                <input type="text" id="noteSearch" class="form-control" placeholder="Search notes...">
-                            </div>
-                            
-                            <div id="noteList" class="note__list"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Focus Timer Widget -->
-                <div class="widget">
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 class="widget__title">Focus Timer</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="timer">
-                                <div class="timer__display">
-                                    <div id="timerTime" class="timer__time">25:00</div>
-                                    <div id="timerStatus" class="timer__status">Ready to focus</div>
-                                </div>
-                                
-                                <div class="timer__progress">
-                                    <div id="timerProgress" class="timer__progress-bar"></div>
-                                </div>
-                                
-                                <div class="timer__controls">
-                                    <button id="timerStart" class="btn btn--primary">Start</button>
-                                    <button id="timerPause" class="btn btn--outline" disabled>Pause</button>
-                                    <button id="timerReset" class="btn btn--outline">Reset</button>
-                                </div>
-                                
-                                <div class="timer__sessions">
-                                    <span class="timer__sessions-label">Sessions completed:</span>
-                                    <span id="timerSessions" class="timer__sessions-count">0</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Progress Analytics Widget -->
-                <div class="widget widget--wide">
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 class="widget__title">Progress Analytics</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="analytics">
-                                <div class="analytics__daily">
-                                    <h3>Today's Progress</h3>
-                                    <div class="progress-bar">
-                                        <div id="dailyProgress" class="progress-bar__fill" style="width: 0%"></div>
-                                    </div>
-                                    <div class="progress-stats">
-                                        <span id="dailyTasksCompleted">0</span> of <span id="dailyTasksTotal">0</span> tasks completed
-                                    </div>
-                                </div>
-                                
-                                <div class="analytics__weekly">
-                                    <h3>This Week</h3>
-                                    <div class="week-chart" id="weekChart">
-                                        <!-- Weekly chart will be generated by JavaScript -->
-                                    </div>
-                                </div>
-                                
-                                <div class="analytics__achievements">
-                                    <h3>Achievements</h3>
-                                    <div class="achievements" id="achievements">
-                                        <!-- Achievements will be generated by JavaScript -->
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="stat">
+                            <span class="stat-number">7.81/10</span>
+                            <span class="stat-label">Current CGPA</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Toast Notification Container -->
-    <div id="toastContainer" class="toast-container"></div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">MS Excel</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Visual Studio Code</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MS Office</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Fraud Detection System</h3>
+                        <span class="project-type">Machine Learning</span>
+                    </div>
+                    <p class="project-description">Developed a fraud detection model using Random Forest Classifier, trained on an imbalanced dataset. Performed data pre-processing, feature selection, and EDA to identify key fraud indicators.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ML</span>
+                        <span class="tech-tag">Random Forest</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Fake News Detection</h3>
+                        <span class="project-type">NLP</span>
+                    </div>
+                    <p class="project-description">Developed a model to classify news as real or fake using NLP and Scikit-learn. Applied text pre-processing, TF-IDF, and trained models like Logistic Regression.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Logistic Regression</span>
+                        <span class="tech-tag">TF-IDF</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>NGO Website</h3>
+                        <span class="project-type">Web Development</span>
+                    </div>
+                    <p class="project-description">Designed and developed a responsive website for Basti Ki Pathshala Foundation using HTML, CSS, and JavaScript. Deployed using GitHub Pages to improve NGO visibility.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>ProductivityHub</h3>
+                        <span class="project-type">Web Application</span>
+                    </div>
+                    <p class="project-description">Built a modern productivity dashboard with task management, focus timer, and note-taking features. Includes analytics dashboard with progress charts and productivity insights.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript ES6+</span>
+                        <span class="tech-tag">Local Storage</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Bachelor of Technology</h3>
+                    <h4>Artificial Intelligence and Data Science Engineering</h4>
+                    <p class="institution">Thakur College of Engineering and Technology</p>
+                    <p class="duration">Aug 2023 – Jul 2027</p>
+                    <div class="grades">
+                        <span>Current SGPA: 8.36/10</span>
+                        <span>Current CGPA: 7.81/10</span>
+                    </div>
+                </div>
+                
+                <div class="certifications">
+                    <h3>Certifications</h3>
+                    <div class="cert-item">
+                        <h4>Complete A.I. & Machine Learning, Data Science Bootcamp</h4>
+                        <p>Udemy • 2025</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>PostgreSQL Bootcamp: Go From Beginner to Advanced</h4>
+                        <p>Udemy • 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm currently seeking internship opportunities in data science and machine learning. Let's connect!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:tapeshthakur12@gmail.com">tapeshthakur12@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:+919004389200">+91 9004308920</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Location:</strong>
+                            <span>Mumbai, India</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/tapeshthakur" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://www.linkedin.com/in/tapeshthakur" target="_blank" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Tapeshkumar Thakur. All rights reserved.</p>
+                <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+            </div>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>
