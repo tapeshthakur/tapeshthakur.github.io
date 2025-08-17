@@ -855,49 +855,98 @@ select.form-control {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: var(--color-bg-1);
-    position: relative;
-    overflow: hidden;
+    width: 100%;
+    padding: 80px 0 40px 0;
+    background: #f8fcfa;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--space-32);
+    display: flex;
     align-items: center;
-    max-width: 900px;
+    justify-content: center;
+    gap: 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 320px;
+    min-width: 260px;
+    text-align: left;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--space-16);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    color: #3b82f6;
+    margin-bottom: 10px;
 }
 
 .hero-tagline {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-32);
-    line-height: var(--line-height-normal);
-    max-width: 600px;
+    font-size: 1.15rem;
+    color: #374151;
+    margin-bottom: 28px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: var(--space-16);
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 18px;
 }
 
+.btn.btn--primary {
+    background: #60a5fa;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 1px 6px rgba(60, 120, 235, 0.08);
+    transition: background 0.18s, box-shadow 0.18s;
+}
+
+.btn.btn--primary:hover {
+    background: #3b82f6;
+    box-shadow: 0 2px 12px rgba(60, 120, 235, 0.16);
+}
+
+/* Avatar Styling */
+.hero-avatar {
+    flex: 0 0 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 18px rgba(60, 120, 235, 0.10);
+    border: 3px solid #e5e7eb;
+    background: #fff;
+}
+
+/* Responsive (Mobile Adjustments) */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 36px;
+    }
+    .hero-avatar {
+        margin-top: 10px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .avatar-img {
+        width: 140px;
+        height: 140px;
+    }
+}
 /* Make both GitHub and LinkedIn buttons identical */
 .hero-buttons .btn--primary {
     background: var(--color-primary);
