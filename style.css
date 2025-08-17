@@ -912,6 +912,24 @@ select.form-control {
     box-shadow: 0 2px 12px rgba(60, 120, 235, 0.16);
 }
 
+/* 👇 Profile photo styles */
+.hero-avatar {
+    flex: 1 1 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%; /* makes it circular */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 4px solid #fff;
+}
+
+
 /* Avatar Styling */
 .hero-avatar {
     flex: 0 0 180px;
